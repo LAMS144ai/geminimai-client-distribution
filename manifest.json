@@ -1,12 +1,12 @@
-{
+﻿{
   "name": "GeminiMai - AI Assistant for Websites and Elementor",
-  "version": "7.5.6",
+  "version": "7.5.7",
   "requires": "6.0",
   "tested": "6.9",
   "requires_php": "7.4",
   "author": "Domocontrol",
   "homepage": "https://domocontrol.net",
-  "download_url": "https://github.com/LAMS144ai/geminimai-client-distribution/releases/download/v7.5.6/geminimai-client-distribution.zip",
+  "download_url": "https://github.com/LAMS144ai/geminimai-client-distribution/releases/download/v7.5.7/geminimai-client-distribution.zip",
   "description": "Multilingual AI assistant for websites and Elementor with knowledge sources, voice, analytics and license validation.",
-  "changelog": "<ul><li>Security hardening for public endpoints.</li><li>Improved license validation flow.</li><li>Added GitHub-based automatic updates for the client build.</li></ul>"
+  "changelog": "<ul><li>Expanded setup help for external public websites.</li><li>Added clearer guidance for sitemap, allowed domains, route maps, exclusions and retrieval chunks.</li><li>Updated client distribution for automatic GitHub updates.</li></ul>"
 }
