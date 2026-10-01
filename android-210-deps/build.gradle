@@ -1,0 +1,18 @@
+repositories {
+    google()
+    mavenCentral()
+}
+
+configurations {
+    offlineDeps
+}
+
+dependencies {
+    offlineDeps "com.google.android.gms:play-services-location:21.3.0"
+}
+
+tasks.register("resolveOfflineDeps") {
+    doLast {
+        configurations.offlineDeps.resolve().each { println it }
+    }
+}
