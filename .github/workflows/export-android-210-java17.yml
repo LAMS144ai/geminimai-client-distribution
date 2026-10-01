@@ -15,8 +15,9 @@ jobs:
           java-version: '17'
       - name: Pack Java 17
         run: |
-          parent="$(dirname "$JAVA_HOME")"
-          base="$(basename "$JAVA_HOME")"
+          real_java_home="$(readlink -f "$JAVA_HOME")"
+          parent="$(dirname "$real_java_home")"
+          base="$(basename "$real_java_home")"
           tar -czf temurin-17-linux-x64.tgz -C "$parent" "$base"
       - uses: actions/upload-artifact@v4
         with:
