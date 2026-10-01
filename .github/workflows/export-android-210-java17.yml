@@ -1,0 +1,26 @@
+name: Export Android Java 17
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  export-java:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Pack Java 17
+        run: |
+          real_java_home="$(readlink -f "$JAVA_HOME")"
+          parent="$(dirname "$real_java_home")"
+          base="$(basename "$real_java_home")"
+          tar -czf temurin-17-linux-x64.tgz -C "$parent" "$base"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: temurin-17-linux-x64
+          path: temurin-17-linux-x64.tgz
+          if-no-files-found: error
